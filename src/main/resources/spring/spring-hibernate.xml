@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" 
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+                        http://www.springframework.org/schema/beans/spring-beans.xsd    
+                        http://www.springframework.org/schema/context    
+                        http://www.springframework.org/schema/context/spring-context.xsd    
+                        http://www.springframework.org/schema/mvc    
+                        http://www.springframework.org/schema/mvc/spring-mvc.xsd">  
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingLocations" value="#{propertyUtils.getList('hibernate.hbm')}"/>	
+		<property name="hibernateProperties">
+			<value>
+			hibernate.dialect=${hibernate.dialect}
+			hibernate.show_sql=false
+			hibernate.format_sql=false
+			hibernate.query.substitutions=true 1, false 0
+			hibernate.jdbc.batch_size=20
+			hibernate.jdbc.use_streams_for_binary=true
+			hibernate.temp.use_jdbc_metadata_defaults=false
+			<!-- 是否自动提交事务 -->
+            hibernate.connection.autocommit=true
+            <!-- 指定hibernate在何时释放JDBC连接 -->
+            hibernate.connection.release_mode=auto
+            
+			hibernate.cache.use_query_cache=true
+			hibernate.cache.use_second_level_cache=true
+			<!-- hibernate.cache.region.factory_class=com.jeecms.common.web.WebSingletonEhCacheRegionFactory -->
+			<!-- hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.EhCacheRegionFactory -->
+			hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+		<!-- 	net.sf.ehcache.configurationResourceName=ehcache-hibernate.xml -->
+
+			</value>
+		</property>
+		<property name="entityInterceptor">   
+			<ref bean="treeInterceptor"/>
+		</property>
+
+
+
+	</bean>
+	<bean id="treeInterceptor" class="com.jeecms.common.hibernate5.TreeIntercptor"/>
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<context:annotation-config/>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+  
+</beans>  
