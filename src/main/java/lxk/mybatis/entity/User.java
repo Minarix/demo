@@ -1,4 +1,4 @@
-package lxk.entity;
+package lxk.mybatis.entity;
 
 import java.util.Date;
 

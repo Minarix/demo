@@ -11,15 +11,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import lxk.entity.User;
-import lxk.service.UserService;
+
+import lxk.hibernate.hibernateEntity.HibernateUser;
+import lxk.hibernate.hibernateService.HibernateUserService;
+import lxk.mybatis.entity.User;
+import lxk.mybatis.service.UserService;
+
+
 
 @Controller
 @RequestMapping("/user")
 public class RESTfulJSONController {
 	@Autowired
 	private UserService userService;
-
+	@Autowired
+	private HibernateUserService hibernateUserService;
 	// 访问路径 http://localhost:8080/portal/user/view/long
 	/** Spring MVC RESTful JSON **/
 	@RequestMapping(value = "/view/{userName}", method = RequestMethod.GET)
@@ -49,5 +55,13 @@ public class RESTfulJSONController {
 
 		return listUser;
 	}
+	// 访问路径 http://localhost:8080/portal/user/hibernatequery?userName=long
+	@RequestMapping(value = "/hibernatequery", method = RequestMethod.GET)
+	@ResponseBody
+	public HibernateUser hibernatequery(@RequestParam(value = "userName", required = true) String userName) {
+		HibernateUser user = hibernateUserService.findByName(userName);
+		System.out.println("view username:" + userName);
 
+		return user;
+	}
 }

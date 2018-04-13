@@ -1,8 +1,8 @@
-package lxk.service;
+package lxk.mybatis.service;
 
 import java.util.List;
 
-import lxk.entity.User;
+import lxk.mybatis.entity.User;
 
 public interface UserService {
 	User getUserById(int userId);

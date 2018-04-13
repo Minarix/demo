@@ -19,6 +19,8 @@
 	</bean>
 	<!-- 引入dataSource -->
 	<import resource="classpath:spring/spring-datasource.xml"/>
+	<import resource="classpath:spring/spring-hibernate.xml"/>
 	<import resource="classpath:spring/spring-aop.xml"/>
 	<import resource="classpath:spring/spring-mybatis.xml"/>
+	
 </beans>      

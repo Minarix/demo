@@ -1,8 +1,8 @@
-package lxk.dao;
+package lxk.mybatis.dao;
 
 import java.util.List;
 
-import lxk.entity.User;
+import lxk.mybatis.entity.User;
 
 public interface UserDao {
 	int deleteByPrimaryKey(Integer id);
