@@ -53,6 +53,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
@@ -177,7 +182,7 @@
 				    <artifactId>ehcache</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency> -->	
+		</dependency>	 -->
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jcache -->
 		<dependency>
 		    <groupId>org.hibernate</groupId>
@@ -216,6 +221,13 @@
 			<artifactId>UserAgentUtils</artifactId>
 			<version>${UserAgentUtils.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+		<dependency>
+		    <groupId>org.freemarker</groupId>
+		    <artifactId>freemarker</artifactId>
+		    <version>${freemarker.version}</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>portal</finalName>

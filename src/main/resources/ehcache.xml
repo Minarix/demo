@@ -19,7 +19,7 @@
       <jcache:cache name="invoices" template="myDefaultTemplate"/>
     </jcache:defaults>
   </ehcache:service>
-
+<!-- <ehcache:persistence directory="d:\\mycache"/> -->
   <!--
     OPTIONAL
       A <cache> element defines a cache, identified by the mandatory 'alias' attribute, to be managed by the CacheManager
