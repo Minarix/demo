@@ -3,6 +3,8 @@ package lxk.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,8 @@ public class RESTfulJSONController {
 	private UserService userService;
 	@Autowired
 	private HibernateUserService hibernateUserService;
+	@Autowired
+	private CacheManager cacheManager;
 	// 访问路径 http://localhost:8080/portal/user/view/long
 	/** Spring MVC RESTful JSON **/
 	@RequestMapping(value = "/view/{userName}", method = RequestMethod.GET)
@@ -60,7 +64,8 @@ public class RESTfulJSONController {
 	public HibernateUser hibernatequery(@RequestParam(value = "userName", required = true) String userName) {
 		HibernateUser user = hibernateUserService.findByName(userName);
 		System.out.println("view username:" + userName);
-
+		Cache cache=cacheManager.getCache("user");
+		cache.get("ssss");
 		return user;
 	}
 }

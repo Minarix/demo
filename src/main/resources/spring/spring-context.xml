@@ -23,5 +23,6 @@
 	<import resource="classpath:spring/spring-aop.xml"/>
 	<import resource="classpath:spring/spring-mybatis.xml"/>
 	<import resource="classpath:spring/spring-freemarker.xml"/>
+	<import resource="classpath:spring/spring-ehcache.xml"/>
 	
 </beans>      
