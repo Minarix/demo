@@ -16,7 +16,7 @@
       One element in another namespace, using our JSR-107 extension as an example here
     -->
     <jcache:defaults>
-      <jcache:cache name="invoices" template="myDefaultTemplate"/>
+      <jcache:cache name="default" template="myDefaultTemplate"/>
     </jcache:defaults>
   </ehcache:service>
 <!-- <ehcache:persistence directory="d:\\mycache"/> -->
@@ -99,7 +99,11 @@
         Any further elements in another namespace
     -->
   </ehcache:cache-template>
-
+	<ehcache:cache alias="default" uses-template="myDefaultTemplate">
+		<!-- <ehcache:key-type>java.lang.Long</ehcache:key-type>
+		<ehcache:value-type>com.pany.domain.Customer</ehcache:value-type> -->
+		<ehcache:heap unit="entries">200</ehcache:heap>
+	</ehcache:cache>
   <!--
     A <cache> that uses the template above by referencing the cache-template's name in the uses-template attribute:
   -->

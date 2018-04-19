@@ -64,7 +64,7 @@ public class RESTfulJSONController {
 	public HibernateUser hibernatequery(@RequestParam(value = "userName", required = true) String userName) {
 		HibernateUser user = hibernateUserService.findByName(userName);
 		System.out.println("view username:" + userName);
-		Cache cache=cacheManager.getCache("user");
+		Cache cache=cacheManager.getCache("default");
 		cache.get("ssss");
 		return user;
 	}
