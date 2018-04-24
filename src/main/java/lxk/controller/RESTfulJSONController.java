@@ -39,7 +39,7 @@ public class RESTfulJSONController {
 		return user;
 	}
 
-	// 访问路径 http://localhost:8080/portal/user/query?username=long
+	// 访问路径 http://localhost:8080/portal/user/query?userName=long
 	@RequestMapping(value = "/query", method = RequestMethod.GET)
 	@ResponseBody
 	public User query(@RequestParam(value = "userName", required = true) String userName) {
