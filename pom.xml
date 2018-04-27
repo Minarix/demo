@@ -30,6 +30,7 @@
 		<lombok.version>1.16.20</lombok.version>
 		<aspectj.version>1.9.0</aspectj.version>
 		<ehcache.version>3.5.2</ehcache.version>
+		<org.springframework.data.version>2.0.6.RELEASE</org.springframework.data.version>
 	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
@@ -182,6 +183,19 @@
 			<artifactId>hibernate-jcache</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>${hibernate.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+		<dependency>
+		    <groupId>org.hibernate.javax.persistence</groupId>
+		    <artifactId>hibernate-jpa-2.1-api</artifactId>
+		    <version>1.0.2.Final</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/com.github.mihaicostin/hibernate-l2-memcached -->
 		<dependency>
 			<groupId>com.github.mihaicostin</groupId>
@@ -284,13 +298,26 @@
 		<dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
-            <version>2.0.6.RELEASE</version>
+            <version>${org.springframework.data.version}</version>
         </dependency>
 		<dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>2.9.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.integralblue/hibernate-springcache -->
+		<dependency>
+		    <groupId>com.integralblue</groupId>
+		    <artifactId>hibernate-springcache</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		    <version>${org.springframework.data.version}</version>
+		</dependency>
+        
 	</dependencies>
 	<build>
 		<finalName>portal</finalName>

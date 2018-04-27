@@ -26,4 +26,5 @@
 	<!-- <import resource="classpath:spring/spring-ehcache.xml"/> -->
 	<!-- <import resource="classpath:spring/spring-memcached.xml"/> -->
 	<import resource="classpath:spring/spring-redis.xml"/>
+	<import resource="classpath:spring/spring-jpa.xml"/>
 </beans>      
