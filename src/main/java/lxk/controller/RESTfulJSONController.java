@@ -83,4 +83,14 @@ public class RESTfulJSONController {
 
 		return user;
 	}
+	// 访问路径 http://localhost:8080/portal/user/hibernatequery?userName=long
+		@RequestMapping(value = "/hibernatequery", method = RequestMethod.GET)
+		@ResponseBody
+		public HibernateUser hibernatequery(@RequestParam(value = "userName", required = true) String userName) {
+			HibernateUser user = hibernateUserService.findByName(userName);
+			System.out.println("view username:" + userName);
+			Cache cache=cacheManager.getCache("default");
+			cache.get("ssss");
+			return user;
+		}
 }

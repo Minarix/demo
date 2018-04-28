@@ -9,7 +9,7 @@
 				        http://www.springframework.org/schema/cache
 				    	http://www.springframework.org/schema/cache/spring-cache.xsd 
         ">
-	<cache:annotation-driven cache-manager="redisCacheManager"/>
+	<cache:annotation-driven cache-manager="cacheManager"/>
     <!-- 以下是spring-data-redis配置方式 -->
     <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
         <constructor-arg>
@@ -18,7 +18,7 @@
         </constructor-arg>      
     </bean>
 
-    <bean id="redisCacheManager" class="org.springframework.data.redis.cache.RedisCacheManager"
+    <bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager"
         factory-method="create" c:connection-factory-ref="jedisConnectionFactory" />    
 
     <bean id="stringRedisSerializer"  class="org.springframework.data.redis.serializer.StringRedisSerializer" />

@@ -189,12 +189,6 @@
 		    <artifactId>hibernate-entitymanager</artifactId>
 		    <version>${hibernate.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
-		<dependency>
-		    <groupId>org.hibernate.javax.persistence</groupId>
-		    <artifactId>hibernate-jpa-2.1-api</artifactId>
-		    <version>1.0.2.Final</version>
-		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/com.github.mihaicostin/hibernate-l2-memcached -->
 		<dependency>
@@ -306,18 +300,22 @@
             <version>2.9.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.integralblue/hibernate-springcache -->
-		<dependency>
+<!-- 		<dependency>
 		    <groupId>com.integralblue</groupId>
 		    <artifactId>hibernate-springcache</artifactId>
 		    <version>1.0.2</version>
-		</dependency>
+		</dependency> -->
         <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
 		<dependency>
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-jpa</artifactId>
 		    <version>${org.springframework.data.version}</version>
 		</dependency>
-        
+        <dependency>
+		    <groupId>com.github.debop</groupId>
+		    <artifactId>hibernate-redis</artifactId>
+		    <version>2.3.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>portal</finalName>
