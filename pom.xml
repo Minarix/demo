@@ -183,12 +183,6 @@
 			<artifactId>hibernate-jcache</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
-		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-entitymanager</artifactId>
-		    <version>${hibernate.version}</version>
-		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/com.github.mihaicostin/hibernate-l2-memcached -->
 		<dependency>
