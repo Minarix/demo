@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 
 import lxk.hibernate.hibernateEntity.HibernateUser;
 import lxk.hibernate.hibernateService.HibernateUserService;
@@ -31,7 +32,8 @@ public class RESTfulJSONController {
 	@ResponseBody
 	public User view(@PathVariable String userName) {
 
-		User user = userService.getUserByUserName(userName);
+//		User user = userService.getUserByUserName(userName);
+		User user=userService.selectOne(new EntityWrapper<User>().eq("user_name",userName));
 		return user;
 	}
 

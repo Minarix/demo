@@ -2,12 +2,12 @@ package lxk.mybatis.dao;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+
 import lxk.mybatis.entity.User;
 
-public interface UserDao {
+public interface UserDao  extends BaseMapper<User> {
 	int deleteByPrimaryKey(Integer id);
-
-	int insert(User record);
 
 	int insertSelective(User record);
 

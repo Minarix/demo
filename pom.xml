@@ -25,7 +25,7 @@
 		<druid.version>1.1.9</druid.version>
 		<mysql-connector.version>6.0.6</mysql-connector.version>
 		<UserAgentUtils.version>1.21</UserAgentUtils.version>
-		<mybatis-plus.version>2.2.0</mybatis-plus.version>
+		<mybatis-plus.version>2.3</mybatis-plus.version>
 		<lombok.version>1.16.20</lombok.version>
 		<aspectj.version>1.9.0</aspectj.version>
 		<ehcache.version>3.5.2</ehcache.version>

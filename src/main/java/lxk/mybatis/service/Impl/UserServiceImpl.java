@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import lxk.common.datasource.DataSourceContextHolder;
 import lxk.common.datasource.DynamicDataSourceAnnotation;
 import lxk.mybatis.dao.UserDao;
@@ -13,7 +14,7 @@ import lxk.mybatis.service.UserService;
 
 @Service()
 @DynamicDataSourceAnnotation
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
 	@Autowired
 	private UserDao userDao;
 

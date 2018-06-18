@@ -60,23 +60,6 @@
 		where id = #{id,jdbcType=INTEGER}
 	</delete>
 
-	<insert id="insert" parameterType="lxk.mybatis.entity.User">
-		insert into user
-		(id,login_name
-		user_name, password,
-		age,email,description,create_time,creator)
-		values
-		(#{id,jdbcType=INTEGER},
-		#{loginName,jdbcType=VARCHAR},
-		#{userName,jdbcType=VARCHAR},
-		#{password,jdbcType=VARCHAR},
-		#{age,jdbcType=INTEGER},
-		#{email,jdbcType=VARCHAR},
-		#{description,jdbcType=BLOB},
-		#{create_time,jdbcType=TIMESTAMP},
-		#{creator,jdbcType=VARCHAR})
-	</insert>
-
 	<insert id="insertSelective" parameterType="lxk.mybatis.entity.User">
 		insert into user
 		<trim prefix="(" suffix=")" suffixOverrides=",">

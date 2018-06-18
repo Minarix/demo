@@ -21,7 +21,8 @@
 	<import resource="classpath:spring/spring-datasource.xml"/>
 	<import resource="classpath:spring/spring-hibernate.xml"/>
 	<import resource="classpath:spring/spring-aop.xml"/>
-	<import resource="classpath:spring/spring-mybatis.xml"/>
+	<!-- <import resource="classpath:spring/spring-mybatis.xml"/> -->
+	<import resource="classpath:spring/spring-mybatis-plus.xml"/>
 	<import resource="classpath:spring/spring-freemarker.xml"/>
 	
 </beans>      
