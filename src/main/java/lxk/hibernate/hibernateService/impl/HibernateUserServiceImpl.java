@@ -3,6 +3,7 @@ package lxk.hibernate.hibernateService.impl;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +22,7 @@ public class HibernateUserServiceImpl implements HibernateUserService {
 		return dao.findByName(name);
 	}
 	
-	@Resource(name="hibernateUserDao")
+	@Resource
 	private HibernateUserDao dao;
 
 

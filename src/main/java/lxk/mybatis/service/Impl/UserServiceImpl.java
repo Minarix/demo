@@ -3,6 +3,7 @@ package lxk.mybatis.service.Impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
@@ -27,7 +28,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
 		// TODO Auto-generated method stub
 		return userDao.getByLoginName(loginName);
 	}
-
+	@Cacheable("default")
 	public User getUserByUserName(String userName) {
 		// TODO Auto-generated method stub
 		return userDao.getByUserName(userName);
